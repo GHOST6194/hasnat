@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise</title>
+    <style>
+        /* Background style */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+            background-size: 400% 400%;
+            animation: rainbow 5s infinite alternate;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* Animation for background */
+        @keyframes rainbow {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        /* Initial message style */
+        .message, .surprise {
+            color: white;
+            font-size: 2em;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            transition: opacity 1s ease;
+            opacity: 1;
+        }
+
+        .surprise {
+            display: none;
+            font-size: 4em;
+            animation: textGlow 1s infinite alternate;
+        }
+
+        /* Text glow effect */
+        @keyframes textGlow {
+            from { text-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px red; }
+            to { text-shadow: 0 0 20px yellow, 0 0 30px green, 0 0 40px blue; }
+        }
+    </style>
+</head>
+<body>
+    <div id="message" class="message">Wait for a surprise...</div>
+    <div id="surprise" class="surprise">Hasnat, if you see this, you are gay!</div>
+
+    <script>
+        // Show the surprise message after a delay
+        setTimeout(() => {
+            document.getElementById("message").style.display = "none";
+            document.getElementById("surprise").style.display = "block";
+        }, 3000); // 3-second delay
+    </script>
+</body>
+</html>
